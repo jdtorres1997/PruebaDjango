@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hello world</title>
+</head>
+<body>
+	<h1 style="color:red">
+		hola
+	</h1>
+	<ul>
+		{% for pr in product %}
+			<li>
+				{{pr.nombre}}
+			</li>
+		{% endfor %}
+	</ul>
+</body>
+</html>
