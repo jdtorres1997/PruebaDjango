@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load staticfiles %}
+	<title>{% block page_title %}{% endblock %}</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+	}
+</head>
+<body>
+	<header>
+		Header
+	</header>
+	
+	<section>
+		{% block content %}
+			
+		{% endblock %}
+	</section>
+
+	<footer>
+		Fin
+	</footer>
+
+</body>
+</html>
