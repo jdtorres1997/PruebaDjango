@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'clientes.apps.ClientesConfig',
     'tiendaprueba.apps.TiendapruebaConfig', #añadido: Se usa para añadir una app al proyecto
     'django.contrib.admin',
     'django.contrib.auth',
