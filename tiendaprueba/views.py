@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.template import loader
 from .models import Product
@@ -24,8 +24,17 @@ def product_detail(request, pk):
 	return HttpResponse(template.render(context, request))
 
 def new_product(request):
+	if request.method == 'POST':
+		form = ProductForm(request.POST, request.FILES)
+		if form.is_valid():
+			product = form.save()
+			product.save()
+			return HttpResponseRedirect('/')
+	else:
+		form = ProductForm()
+
 	template = loader.get_template('new_product.html')
-	form = ProductForm()
+	
 	context = {
 		'form' : form
 	}
